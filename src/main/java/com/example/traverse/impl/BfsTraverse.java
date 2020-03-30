@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 
 public class BfsTraverse<T> extends AbstractTraverse<T> {
     BfsTraverse(Graph<T> graph) {
@@ -20,7 +21,7 @@ public class BfsTraverse<T> extends AbstractTraverse<T> {
         visitedVertices.put(fromVertex, true);
         visits.add(fromVertex);
 
-        LinkedList<T> queue = new LinkedList<>();
+        Queue<T> queue = new LinkedList<>();
         queue.add(fromVertex);
 
         while (!queue.isEmpty()) {
