@@ -4,18 +4,16 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 
-import java.util.Comparator;
-
 @Data
 @RequiredArgsConstructor
-public class City implements Comparator<City> {
+public class City implements Comparable<City> {
     private final int id;
 
     @EqualsAndHashCode.Exclude
     private final String name;
 
     @Override
-    public int compare(City o1, City o2) {
-        return Integer.compare(o1.getId(), o2.getId());
+    public int compareTo(City city) {
+        return Integer.compare(getId(), city.getId());
     }
 }
